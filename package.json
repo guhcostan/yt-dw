@@ -1,0 +1,17 @@
+{
+  "name": "yt-dw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.14",
+    "express": "^4.17.1",
+    "yt-dl-playlist": "^2.0.0"
+  }
+}
