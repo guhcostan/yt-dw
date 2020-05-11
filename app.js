@@ -3,6 +3,7 @@ const DownloadYTFile = require('yt-dl-playlist');
 var fs = require('fs');
 var AdmZip = require('adm-zip');
 var port = process.env.PORT || 3000
+var html = fs.readFileSync('index.html');
 
 const app = express();
 let zipsId = 0
@@ -31,6 +32,12 @@ app.get('/download', (req, res) => {
             deleteFile(video.filePath);
         });
     })
+});
+
+app.get('/', (req, res) => {
+    res.writeHead(200);
+    res.write(html);
+    res.end();
 });
 
 function deleteFile (file) {
