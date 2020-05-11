@@ -2,6 +2,7 @@ var express = require('express')
 const DownloadYTFile = require('yt-dl-playlist');
 var fs = require('fs');
 var AdmZip = require('adm-zip');
+var port = process.env.PORT || 3000
 
 const app = express();
 let zipsId = 0
@@ -16,7 +17,8 @@ const downloader = new DownloadYTFile({
 
 downloader.on('progress', (fileInfo) => console.log(fileInfo))
 
-app.listen(4000, () => {
+app.listen(port, () => {
+    console.log('Server running at http://127.0.0.1:' + port + '/');
 });
 
 app.get('/download', (req, res) => {
